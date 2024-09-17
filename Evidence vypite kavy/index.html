@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidenční formulář kávy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Evidenční formulář kávy</h1>
+        <form id="coffeeForm" class="form">
+            <fieldset>
+                <legend>Vyberte uživatele</legend>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="user" value="1" required>
+                        <span>Masopust Lukáš</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="user" value="2" required>
+                        <span>Molič Jan</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="user" value="3" required>
+                        <span>Adamek Daniel</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="user" value="4" required>
+                        <span>Weber David</span>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Kolik kávových nápojů?</legend>
+                <div class="range-group">
+                    <label for="Mléko">Mléko</label>
+                    <input type="range" name="milk" min="0" max="10" value="0" onchange="updateTextInput(this, 'countMléko')">
+                    <b id="countMléko">0</b>
+                </div>
+                <div class="range-group">
+                    <label for="Espresso">Espresso</label>
+                    <input type="range" name="espresso" min="0" max="10" value="0" onchange="updateTextInput(this, 'countEspresso')">
+                    <b id="countEspresso">0</b>
+                </div>
+                <div class="range-group">
+                    <label for="Coffe">Coffe</label>
+                    <input type="range" name="coffee" min="0" max="10" value="0" onchange="updateTextInput(this, 'countCoffe')">
+                    <b id="countCoffe">0</b>
+                </div>
+                <div class="range-group">
+                    <label for="Long">Long</label>
+                    <input type="range" name="long" min="0" max="10" value="0" onchange="updateTextInput(this, 'countLong')">
+                    <b id="countLong">0</b>
+                </div>
+                <div class="range-group">
+                    <label for="Doppio+">Doppio+</label>
+                    <input type="range" name="doppio" min="0" max="10" value="0" onchange="updateTextInput(this, 'countDoppio+')">
+                    <b id="countDoppio+">0</b>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-button">Odeslat</button>
+        </form>
+        <button id="showResults" class="results-button">Zobrazit výsledky</button>
+        <button id="showSummary" class="summary-button">Zobrazit měsíční přehled</button>
+        <div id="results" class="results"></div>
+        <div id="summary" class="summary"></div>
+    </div>
+</body>
+</html>
